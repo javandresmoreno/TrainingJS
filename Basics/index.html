@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Fundamentals</title>
+  </head>
+  <body>
+    <h1>JavaScript Fundamentals</h1>
+
+    <ul>
+      <li>Spring</li>
+      <li>Summer</li>
+      <li>Autumn</li>
+      <li>Winter</li>
+    </ul>
+    <script>
+      // ya no se usa var
+      let hola = "Hola Mundo";
+      console.log(hola);
+
+      //const no permite declarar una constante sin inicializar esa variable = const PI;
+      const PI = 3.1416;
+      console.log(PI);
+
+      let person = {
+        name: "Javier",
+        age: 39,
+      };
+
+      let colors = ["white", "black", "red"];
+      console.log(person, colors);
+
+      colors.push("orange");
+      person.email = "javier@solido.co";
+
+      console.log(person, colors);
+
+      //************************************************
+      // cadenas de texto aka (also known as) Strings
+      //************************************************
+
+      let name = "Javier";
+      let lastName = "Moreno";
+      let greeting = new String("Hola Mundo");
+
+      let loremImpsum =
+        "   Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque architecto, placeat exercitationem ab eius, hic laboriosam aliquam odio quia, maiores obcaecati ut ullam odit beatae alias quaerat labore porro?  ";
+
+      console.log(name, lastName, greeting);
+      console.log(
+        name.length,
+        lastName.length,
+        greeting.length,
+        name.toUpperCase(),
+        lastName.toLowerCase(),
+        loremImpsum.includes("dolor"),
+        loremImpsum,
+        //trim quita espacios al comienzo y al final de un strings.
+        loremImpsum.trim(),
+        //split genera un arreglo o conjunto de elementos nuevo para separar cada palabra de mi cadena, a partir de los espacios en blanco
+        loremImpsum.split(" "),
+        loremImpsum.split(",")
+      );
+
+      //************************************************
+      // Template Strings
+      //************************************************
+
+      //concatenacion (unir)
+
+      let firstName2 = "Javier";
+      let lastName2 = "Moreno";
+      let greeting2 = "Hello my name is " + firstName2 + " " + lastName2 + ".";
+
+      console.log(greeting2);
+
+      //interpolacion de variables
+
+      let greeting3 = `Hello my name is ${firstName2} ${lastName2}.`;
+
+      console.log(greeting3);
+
+      let ulSeasons = `
+        <ul>
+          <li>Spring</li>
+          <li>Summer</li>
+          <li>Autumn</li>
+          <li>Winter</li>
+        </ul>      
+      `;
+
+      console.log(ulSeasons);
+
+      //************************************************
+      // Numbers
+      //************************************************
+
+      let numberA = 2;
+      let numberB = new Number(1);
+      let numberC = 7.19;
+      let numberD = "5.6";
+
+      console.log(numberA, numberB);
+      // método = acción to fixed me da la cantidad de decimales que quiero
+      console.log(numberC.toFixed(1)); // 7.2
+      console.log(parseInt(numberC)); // 7
+      console.log(parseFloat(numberC)); // 7.19
+
+      console.log(typeof numberD, typeof numberC);
+
+      console.log(numberA + numberB);
+      console.log(numberC + parseInt(numberD));
+      console.log(numberC + parseFloat(numberD));
+
+      //************************************************
+      // Booleans
+      //************************************************
+
+      let verdadero = true;
+      let falso = false;
+
+      let v = Boolean(true);
+      let f = Boolean(false);
+
+      console.log(verdadero, falso, v, f);
+
+      console.log(Boolean(0)); // False
+      console.log(Boolean(-7)); // True
+      console.log(Boolean("")); // False
+      console.log(Boolean(" ")); // True
+
+      //truthy y falsy en MDN para ver todos los datos.
+
+      //************************************************
+      // null / NaN / undefined
+      //************************************************
+
+      /*undefined indica que no se ha inicializado una
+      variable y que el valor está ausente.*/
+      let indefinida;
+      console.log(indefinida);
+
+      /*null es un valor especial que indica la ausencia de un valor*/
+      let nulo = null;
+      console.log(nulo);
+
+      // NaN - Not a number
+
+      let noEsUnNumero = "hola" * 3.7;
+      console.log(noEsUnNumero);
+    </script>
+  </body>
+</html>
