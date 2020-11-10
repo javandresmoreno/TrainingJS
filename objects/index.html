@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      let a = new String("Hi!");
+      console.log(a);
+
+      const b = {};
+
+      /* Dentro de un objeto a las variables se les llama atributos / propiedades y a las 
+funciones se les llama métodos*/
+
+      const javier = {
+        firstname: "Javier",
+        lastname: "Moreno",
+        age: 39,
+        hobbies: ["cycling", "running", "study"],
+        single: false,
+        contact: {
+          email: "javier@solido.co",
+          twitter: "@javandresmoreno",
+          phoneNumber: "3002104575",
+        },
+        gretting: function () {
+          console.log("Hello!");
+        },
+        sayMyName: function () {
+          console.log(
+            `Hi, My name is ${this.firstname} ${this.lastname} I'm ${this.age} years old. You can follow me as ${this.contact.twitter} in Twitter`
+          );
+        },
+      };
+
+      console.log(javier);
+      console.log(javier["firstname"]);
+      console.log(javier.lastname);
+      console.log(javier.age);
+      console.log(javier.hobbies[1]);
+      console.log(javier.contact.twitter);
+
+      javier.gretting();
+      javier.sayMyName();
+
+      console.log(Object.keys(javier));
+      console.log(Object.values(javier));
+      console.log(javier.hasOwnProperty("firstname"));
+      console.log(javier.hasOwnProperty("birthday"));
+    </script>
+  </body>
+</html>

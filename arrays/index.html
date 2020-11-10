@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays - Arreglos</title>
+  </head>
+  <body>
+    <script>
+      const arrayExample = [];
+      const arrayExampleB = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+
+      console.log(arrayExample);
+      console.log(arrayExampleB);
+      console.log(arrayExampleB.length);
+      console.log(arrayExampleB[2]);
+      console.log(arrayExampleB[0]);
+      console.log(arrayExampleB[3][3][0]);
+
+      //array of nos permite crear arreglos (ES6)
+      const arrayExampleC = Array.of("x", "y", "z", 9, 8, 7);
+      console.log(arrayExampleC);
+
+      const arrayExampleD = Array(100).fill(false);
+
+      console.log(arrayExampleD);
+
+      const arrayExampleE = new Array();
+
+      const arrayExampleF = new Array(1, 2, 3, true, false);
+
+      console.log(arrayExampleF);
+
+      // métodos para los arrays
+
+      const colors = ["Red", "Blue", "Green"];
+
+      console.log(colors);
+
+      colors.push("Black");
+      console.log(colors);
+
+      colors.pop();
+      console.log(colors);
+
+      colors.forEach(function (el, index) {
+        console.log(`<li id="${index}">${el}</li>`);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+  </head>
+  <body>
+    <h1>Functions at JS</h1>
+    <script>
+      //***************************
+      // Declaración de Función
+      //***************************
+
+      function firstFunction() {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+      }
+
+      function dataFunction() {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+        return "Function returned a string";
+      }
+
+      //***************************
+      // Invocación de función
+      //***************************
+
+      let valueDataFunction = dataFunction();
+
+      // firstFunction();
+      // console.log(valueDataFunction);
+
+      //***************************
+      // Parámetros
+      //***************************
+
+      function greeting(name = "Unknown", age = 0) {
+        console.log(`Hello, my name is ${name} and I'm ${age} years old.`);
+      }
+
+      greeting("Javier", 39);
+
+      greeting();
+
+      //***************************
+      // Funciones declaradas Vs. Funciones expresadas.
+      //***************************
+
+      declarativeFunction();
+
+      function declarativeFunction() {
+        console.log(
+          "Esto es una función declarada, puede invocarse en cualquier parte de nuestro código, incluso antes de que la función sea declarada"
+        );
+      }
+
+      declarativeFunction();
+
+      // expresiveFunction();
+
+      // función anónima
+      const expresiveFunction = function () {
+        console.log(
+          "Esto es una función expresada, es decir una función que se ha asignado como valor a una variable. Si invocamos esta función antes de su definición, JS nos dirá: Cannot access 'expresiveFunction' before initialization"
+        );
+      };
+
+      expresiveFunction();
+    </script>
+  </body>
+</html>
