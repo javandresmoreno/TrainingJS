@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditionals</title>
+  </head>
+  <body>
+    <h1>Conditionals</h1>
+    <script>
+      //estructura de control es un mecanismo que permite controlar el flujo de mi programación
+      //estructuras de control > (estructuras secuenciales, condicionales, repetitivas (loops))
+
+      // if - else > me permite tomar una decisión, y si esta condición se cumple, ejecutar ciertas acciones.
+
+      let age = 17;
+
+      if (age > 17) {
+        console.log(`Eres mayor de edad`);
+      } else {
+        console.log(`Eres menor de edad`);
+      }
+
+      if (age >= 18) {
+        console.log(`Eres mayor de edad`);
+      } else {
+        console.log(`Eres menor de edad`);
+      }
+
+      // if - else, if - else (if anidados)
+
+      /* Déjame dormir 0hrs - 5hrs
+      Buenos días 6hrs - 11hrs
+      Buenas tardes 12hrs - 18hrs 
+      Buenas noches 19hrs - 23hrs */
+
+      let hour = 20;
+
+      if (hour >= 0 && hour <= 5) {
+        console.log(`Please, Leave me sleep!`);
+      } else if (hour >= 6 && hour <= 11) {
+        console.log(`Good Morning!`);
+      } else if (hour >= 12 && hour <= 18) {
+        console.log(`Good Afternoon!`);
+      } else {
+        console.log(`Good Evening!`);
+      }
+
+      //operador ternario (condicion) ? verdadero : falsa
+
+      console.log("operador ternario");
+
+      let eresMayor = age >= 18 ? "Eres Mayor de Edad" : "Eres menor de edad";
+      console.log(eresMayor);
+
+      // switch - case (diferentes valores para una misma variable)
+
+      /* Domingo - 0 / Lunes - 1 / Martes - 2 / Miercoles - 3 / Jueves - 4 / Viernes - 5 / Sabado - 6  */
+
+      let day = 20;
+
+      switch (day) {
+        case 0:
+          console.log("Sunday");
+          break;
+        case 1:
+          console.log("Monday");
+          break;
+        case 2:
+          console.log("Tuesday");
+          break;
+        case 3:
+          console.log("Wednesday");
+          break;
+        case 4:
+          console.log("Thursday");
+          break;
+        case 5:
+          console.log("Friday");
+          break;
+        case 6:
+          console.log("Saturday");
+          break;
+
+        default:
+          console.log("This day no exist");
+          break;
+      }
+    </script>
+  </body>
+</html>
