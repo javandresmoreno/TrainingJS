@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring</title>
+  </head>
+  <body>
+    <h1>Destructuring</h1>
+    <script>
+      let numbers = [1, 2, 3];
+
+      let one = numbers[0]; // forma antigua, sin destructuración
+      let two = numbers[1];
+      let three = numbers[2];
+
+      // Con destructuración
+
+      const [uno, dos, tres] = numbers;
+      console.log(uno, dos, tres);
+
+      const person = {
+        name: "Javier",
+        lastName: "Moreno",
+        age: 39,
+      };
+
+      // las variables deben llamarse igual que las propiedades del objeto.
+      let { name, lastName, age } = person;
+      console.log(name, lastName, age);
+    </script>
+  </body>
+</html>

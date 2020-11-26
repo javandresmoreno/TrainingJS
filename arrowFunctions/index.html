@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Functions</title>
+  </head>
+  <body>
+    <h1>Arrow Functions</h1>
+    <script>
+      //función expresada
+      const greeting = function () {
+        console.log("Hola");
+      };
+
+      greeting();
+
+      //arrow function
+      const greeting2 = () => console.log("Hola");
+
+      greeting2();
+
+      const greeting3 = (name) => console.log(`Hola, ${name}`);
+
+      greeting3("Magnolia");
+
+      const sum = function (a, b) {
+        return a + b;
+      };
+
+      console.log(sum(15651, 51818));
+
+      const sum2 = (a, b) => a + b;
+
+      console.log(sum2(58, 18));
+
+      const functionOfSeveralLines = () => {
+        console.log("One");
+        console.log("Two");
+        console.log("Three");
+      };
+
+      functionOfSeveralLines();
+
+      // para iterar sobre un arreglo
+
+      const numbers = [1, 2, 3, 4, 5];
+
+      numbers.forEach((element, index) => {
+        console.log(`${element} está en la posición ${index}`);
+      });
+
+      const doggy = {
+        nombre: "Toby",
+        // con las arrow function no respeta el contexto de bloque, sino que lo salta al contexto global (window)
+        ladrar: () => {
+          console.log(this);
+        },
+      };
+
+      doggy.ladrar();
+
+      const doggy2 = {
+        nombre: "Toby",
+        ladrar() {
+          console.log(this);
+        },
+      };
+
+      doggy2.ladrar();
+    </script>
+  </body>
+</html>

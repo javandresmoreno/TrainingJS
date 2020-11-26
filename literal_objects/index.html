@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Literal Objects</title>
+  </head>
+  <body>
+    <script>
+      //forma antigua
+      let name = "Javier";
+      age = 39;
+
+      const frontend = {
+        name: name,
+        age: age,
+        code: function () {
+          console.log("code, eat, sleep, repeat");
+        },
+      };
+
+      console.log(frontend);
+      frontend.code();
+
+      //nueva forma de escribir atributos y métodos, incluso de asignarlos
+
+      const disenadorWeb = {
+        //propiedades
+        name,
+        age,
+        //métodos
+        code() {
+          console.log("code, run, eat, sleep, repeat");
+        },
+      };
+
+      console.log(disenadorWeb);
+      disenadorWeb.code();
+    </script>
+  </body>
+</html>
