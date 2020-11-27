@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototypes</title>
+  </head>
+  <body>
+    <h1>Prototypes</h1>
+    <script>
+      //POO -- Programación orientada a objetos (Paradigma de programación)
+      /*
+        Clases => Modelo a seguir (Esquema)
+        Objetos => es una instancia de una clase
+          Atributos -- Es una característica o propiedad del objeto  (variables dentro de un objeto)
+          Métodos -- Acciones que un objeto puede realizar (son funciones dentro de un objeto)
+
+        PROTOTIPOS es un mecanismo por el cual un objeto puede heredar atributos y métodos de una clase (objeto padre)
+      */
+
+      const animal = {
+        name: "yogui",
+        sound() {
+          console.log("I make sounds because I'm alive and I'm hungry!");
+        },
+      };
+
+      const animal2 = {
+        name: "Lola Bunny",
+        sound() {
+          console.log("I make sounds because I'm alive and I'm hungry!");
+        },
+      };
+
+      animal.sound();
+      console.log(animal2);
+
+      // FUNCIÓN CONSTRUCTORA de la cual vamos a crear un prototipo
+
+      function Animal(name, gender) {
+        //Atributos
+        this.name = name;
+        this.gender = gender;
+
+        // //Métodos
+        // this.sound = function () {
+        //   console.log("I make sounds because I'm alive and I'm hungry!");
+        // };
+
+        // this.greeting = function () {
+        //   console.log(`Hola me llamo ${this.name}`);
+        // };
+      }
+
+      //Métodos es mejor sacarlos de la función constructora, para evitar duplicarlos en todas las instancias. Lo asignamos al prototipo
+      Animal.prototype.sound = function () {
+        console.log("I make sounds because I'm alive and I'm hungry!");
+      };
+
+      Animal.prototype.greeting = function () {
+        console.log(`Hola me llamo ${this.name}`);
+      };
+
+      const yogui = new Animal("Yogui", "Male"),
+        lolaBunny = new Animal("Lola", "Female");
+
+      console.log(yogui);
+      console.log(lolaBunny);
+
+      yogui.sound();
+      yogui.greeting();
+
+      lolaBunny.sound();
+      lolaBunny.greeting();
+
+      //
+    </script>
+  </body>
+</html>
