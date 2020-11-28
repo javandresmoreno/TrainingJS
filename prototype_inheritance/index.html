@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Herencia Prototipal / Prototype inheritance</title>
+  </head>
+  <body>
+    <h1>Prototype inheritance</h1>
+    <script>
+      // FUNCIÓN CONSTRUCTORA de la cual vamos a crear un prototipo
+
+      function Animal(name, gender) {
+        //Atributos
+        this.name = name;
+        this.gender = gender;
+      }
+
+      //Métodos es mejor sacarlos de la función constructora, para evitar duplicarlos en todas las instancias. Lo asignamos al prototipo
+      Animal.prototype.sound = function () {
+        console.log("I make sounds because I'm alive and I'm hungry!");
+      };
+
+      Animal.prototype.greeting = function () {
+        console.log(`Hola me llamo ${this.name}`);
+      };
+
+      // Herencia Prototípica
+
+      function Dog(name, gender, size) {
+        this.super = Animal;
+        this.super(name, gender);
+        this.size = size;
+      }
+
+      // Dog está heredando de Animal
+      Dog.prototype = new Animal();
+      Dog.prototype.constructor = Dog;
+
+      // Sobreescritura de métodos del Prototipo padre en el hijo
+      Dog.prototype.sound = function () {
+        console.log("I'm a Dog, and my sound is a barking");
+      };
+
+      Dog.prototype.bark = function () {
+        console.log("guauuu guauuu!!!");
+      };
+
+      const snoopy = new Dog("Snoopy", "Male", "Medium");
+      const lolaBunny = new Animal("Lola Bunny", "Female", "Small");
+
+      console.log(snoopy);
+      console.log(lolaBunny);
+
+      snoopy.sound();
+      snoopy.greeting();
+      snoopy.bark();
+
+      lolaBunny.sound();
+      lolaBunny.greeting();
+    </script>
+  </body>
+</html>

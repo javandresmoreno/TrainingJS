@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clases y Herencia</title>
+  </head>
+  <body>
+    <h1>Clases y Herencia</h1>
+    <script>
+      //clases - azucar sintáctica
+      //las clases no reciben parámetros, los recibe el método especial constructor
+      class Animal {
+        //el constructor es un método especial que se ejecuta en el momento de instanciar la clase
+        constructor(name, gender) {
+          //Atributos(Propiedades, variables)
+          this.name = name;
+          this.gender = gender;
+        }
+        //Métodos(Funciones)
+        sound() {
+          console.log("I make sounds, because I'm alive");
+        }
+        greeting() {
+          console.log(`Hi, my name is ${this.name}`);
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(name, gender, size) {
+          // con el método super() se manada a llamar el constructuro de la clase padre.
+          super(name, gender);
+          this.size = size;
+        }
+        sound() {
+          console.log("I'm a dog and my sound is a barking.");
+        }
+
+        bark() {
+          console.log("guauu, guauu!!!");
+        }
+      }
+
+      const minnie = new Animal("Minnie", "Female");
+      scooby = new Dog("Scooby", "Male", "Extra-Large");
+
+      console.log(minnie, scooby);
+
+      minnie.greeting();
+      minnie.sound();
+
+      scooby.greeting();
+      scooby.sound();
+      scooby.bark();
+    </script>
+  </body>
+</html>
