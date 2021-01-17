@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Console</title>
+  </head>
+  <body>
+    <script>
+      /* --- Objeto Console ---*/
+
+      console.log(console);
+
+      /*
+      console {debug: ƒ, error: ƒ, info: ƒ, log: ƒ, warn: ƒ, …}
+        assert: ƒ assert()
+        clear: ƒ clear()
+        context: ƒ context()
+        count: ƒ count()
+        countReset: ƒ countReset()
+        debug: ƒ debug()
+        dir: ƒ dir()
+        dirxml: ƒ dirxml()
+        error: ƒ error()
+        group: ƒ group()
+        groupCollapsed: ƒ groupCollapsed()
+        groupEnd: ƒ groupEnd()
+        info: ƒ info()
+        log: ƒ log()
+        memory: (...)
+        profile: ƒ profile()
+        profileEnd: ƒ profileEnd()
+        table: ƒ table()
+        time: ƒ time()
+        timeEnd: ƒ timeEnd()
+        timeLog: ƒ timeLog()
+        timeStamp: ƒ timeStamp()
+        trace: ƒ trace()
+        warn: ƒ warn()
+      */
+
+      console.error("Esto es un error!");
+
+      console.warn("Esto es un warning");
+
+      console.info("info, Hola, esto es un mensaje informativo");
+
+      console.log("log, Un registro de lo que ha pasado en la aplicación");
+
+      let name = "Javier",
+        lastName = "Moreno",
+        age = 39;
+
+      console.log(name, lastName, age);
+
+      console.log(
+        `Hi, my name is ${name} ${lastName}. I have ${39} years old. Thanks 😀`
+      );
+
+      //Con Comodines
+      console.log(
+        `Hi, my name is %s %s. I have %d years old. Thanks 😀`,
+        name,
+        lastName,
+        age
+      );
+
+      console.clear();
+
+      console.log(window);
+      console.log(document);
+      // Para ver las propiedades del document...
+      console.dir(document);
+
+      console.clear();
+
+      /*----------------------------------------------------------------------------------*/
+
+      console.groupCollapsed("Los cursos de @jonmircha en Youtube");
+      console.log("Curso de JavaScript");
+      console.log("Curso de PWAs");
+      console.log("Curso de Flexbox");
+      console.log("Curso de CSS Grid");
+      console.log("Curso de Diseño y Programación Web");
+      console.groupEnd();
+
+      console.clear();
+
+      /*----------------------------------------------------------------------------------*/
+      //Para hacer tablas y organizarlas alfabéticamente con .sort
+
+      console.table(Object.entries(console).sort());
+
+      const numbers = [1, 2, 3, 4, 5];
+      const vowels = ["a", "e", "i", "o", "u"];
+
+      console.table(numbers);
+      console.table(vowels);
+
+      const dog = {
+        name: "Toby",
+        breed: "Gozque",
+        colour: "Golden",
+      };
+
+      console.table(dog);
+
+      console.clear();
+
+      /*----------------------------------------------------------------------------------*/
+
+      // el texto que acompaña al .time es un alias o etiqueta, por tanto debe ir igual en time y timeEnd
+      console.time("Cuánto tiempo tarda mi código?");
+
+      const arrayExample = Array(1000000);
+
+      // con este ciclo for se puede asignar un valor a cada posición del arreglo declarado anteriormente, comenzando desde el 0
+      for (let i = 0; i < arrayExample.length; i++) {
+        arrayExample[i] = i;
+      }
+
+      console.timeEnd("Cuánto tiempo tarda mi código?");
+
+      console.log(arrayExample);
+
+      console.clear();
+
+      /*----------------------------------------------------------------------------------*/
+
+      for (let i = 0; i <= 100; i++) {
+        console.count("código for");
+        console.log(i);
+      }
+
+      console.clear();
+
+      /*----------------------------------------------------------------------------------*/
+
+      let x = 6,
+        y = 6,
+        pruebaXY = "Se espera que x siempre sea menor que y";
+      console.assert(x <= y, { x, y, pruebaXY });
+    </script>
+  </body>
+</html>
