@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Objeto Date</title>
+  </head>
+  <body>
+    <h1>Date Constructor</h1>
+    <script>
+      console.log(Date());
+
+      let currentDate = new Date();
+      console.log(currentDate);
+      //día del mes
+      console.log(currentDate.getDate());
+      // día de la semana (Domingo a Sábado -> 0 1 2 3 4 5 6 )
+      console.log(currentDate.getDay());
+      // mes Ene - Dic -> 0 - 11
+      console.log(currentDate.getMonth());
+      // a partir de 1900 cuántos años han pasado
+      console.log(currentDate.getYear());
+      // mejor usar este, para el año actual
+      console.log(currentDate.getFullYear());
+      // Hora
+      console.log(currentDate.getHours());
+      // Minutes
+      console.log(currentDate.getMinutes());
+      // Segundos
+      console.log(currentDate.getSeconds());
+      // MiliSegundos
+      console.log(currentDate.getMilliseconds());
+      // Para obtener la fecha y hora similiar a solo Date()
+      console.log(currentDate.toString());
+      // Para obtener sin uso horario
+      console.log(currentDate.toDateString());
+      // Para obtener solo la fecha y hora local
+      console.log(currentDate.toLocaleString());
+      // Para obtener solo la fecha
+      console.log(currentDate.toLocaleDateString());
+      // Para obtener solo la hora
+      console.log(currentDate.toLocaleTimeString());
+      // Para obtener el uso horario en minutos. GMT -0500
+      console.log(currentDate.getTimezoneOffset());
+      // Para obtener el día utc meridiano 0
+      console.log(currentDate.getUTCDate());
+      // Para obtener la hora utc meridiano 0
+      console.log(currentDate.getUTCHours());
+
+      // Cuantos segundos han pasado desde el 1 enero de 1970 / TimeStamp
+      console.log(Date.now());
+
+      let birthdayJavier = new Date(1981, 8, 6);
+      console.log(birthdayJavier);
+    </script>
+  </body>
+</html>
