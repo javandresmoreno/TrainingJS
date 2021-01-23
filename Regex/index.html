@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regular Expressions</title>
+  </head>
+  <body>
+    <h1>Expresiones Regulares</h1>
+    <script>
+      /* 
+    Las expresiones regulares es una secuencia de caracteres 
+    que forman un patrón de búsqueda, y que principalmente 
+    es utilizado en la busqueda de cadenas de texto. 
+
+    consultar en MDN o wikipedia
+    */
+
+      let chainText =
+        "Lorem ipsum dolor sit amet, 8 consectetur adipisicing elit. lorem Illo temporibus dolor dignissimos, atque aspernatur, eum adipisci molestiae ullam obcaecati unde consequatur ducimus? Voluptate explicabo commodi repudiandae alias, exercitationem dicta quasi.";
+
+      // RegExp Recibe dos parámetros la palabra y los flags.
+      // La bandera i sirve para que ignore mayúsculas y minúsculas.
+      // la bandera g es para encuentre todos las coincidencias y no se detenga con una sola.
+      let expReg = new RegExp("lorem", "ig");
+      let expReg2 = /lorem{3}/gi;
+      let expReg3 = /\d/gi;
+
+      console.log(expReg.test(chainText)); //Devuelve true
+      console.log(expReg.exec(chainText)); //Devuelve un array
+
+      console.log(expReg2.test(chainText));
+      console.log(expReg2.exec(chainText));
+
+      console.log(expReg3.test(chainText));
+      console.log(expReg3.exec(chainText));
+    </script>
+  </body>
+</html>
