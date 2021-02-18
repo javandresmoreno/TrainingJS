@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modulos en JavaScript</title>
-    <script src="MODULOS_JS/modulos.js"></script>
   </head>
   <body>
     <h1>Módulos en JavaScript</h1>
+    <!-- para poder importar el código JS de la etiqueta script es necesario colocar type="module", sino marcará error. -->
+    <script src="MODULOS_JS/modulos.js" type="module"></script>
+    <!-- para dar soporte a modulos antiguos -->
+    <script src="MODULOS_JS/no-modules.js" nomodule></script>
   </body>
 </html>

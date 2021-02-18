@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Exercises | JonMircha's Course</title>
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <img
+          src="./assets/svg/logo_javandresmoreno-dark.svg"
+          alt="Logo Javier"
+        />
+      </div>
+      <h1>Ejercicios Básicos JS</h1>
+    </header>
+    <section>
+      <h2>Lista de Ejercicios</h2>
+      <ol>
+        <li>
+          Programa una función que cuente el número de caracteres de una cadena
+          de texto, pe. miFuncion("Hola Mundo").
+          <pre>
+            <code>
+              let charString = "I'm the best JS developer in Bogotá!";
+
+              function countCharString(variable) {
+                console.log(variable.length);
+              }
+
+              countCharString(charString);
+            </code>
+          </pre>
+        </li>
+        <li>
+          Programa una función que te devuelva el texto recortado según el
+          número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
+          devolverá "Hola".
+          <pre>
+            <code>
+              let charString = "I'm the best JS developer in Bogotá!";
+
+              function countCharSpecific(something) {
+                console.log(something.substring(0, 8));
+              }
+
+              countCharSpecific(charString);
+            </code>
+          </pre>
+        </li>
+        <li>
+          Programa una función que dada una String te devuelva un Array de
+          textos separados por cierto caracter, pe. miFuncion('hola que tal', '
+          ') devolverá ['hola', 'que', 'tal'].
+          <pre>
+            <code>
+              let greeting = "Hola qué tal";
+
+              function separateInAnArray(something) {
+                console.log(something.split(" "));
+              }
+
+              separateInAnArray(greeting);
+            </code>
+          </pre>
+        </li>
+        <li>
+          Programa una función que repita un texto X veces, pe. miFuncion('Hola
+          Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+        </li>
+      </ol>
+    </section>
+    <script>
+      let charString = "I'm the best JS developer in Bogotá!";
+
+      function countCharString(variable) {
+        console.log(variable.length);
+      }
+
+      countCharString(charString);
+
+      console.clear;
+
+      function countCharSpecific(something) {
+        console.log(something.substring(0, 8));
+      }
+
+      countCharSpecific(charString);
+
+      console.clear;
+
+      let greeting = "Hola qué tal";
+
+      function separateInAnArray(something) {
+        console.log(something.split(" "));
+      }
+
+      separateInAnArray(greeting);
+    </script>
+  </body>
+</html>
