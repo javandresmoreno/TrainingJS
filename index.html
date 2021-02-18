@@ -18,62 +18,177 @@
       <h1>Ejercicios Básicos JS</h1>
     </header>
     <section>
-      <h2>Lista de Ejercicios</h2>
-      <ol>
-        <li>
-          Programa una función que cuente el número de caracteres de una cadena
-          de texto, pe. miFuncion("Hola Mundo").
-          <pre>
-            <code>
+      <div class="container">
+        <h2 class="text-center">Lista de Ejercicios</h2>
+        <ol>
+          <li>
+            Programa una función que cuente el número de caracteres de una
+            cadena de texto, pe. miFuncion("Hola Mundo").
+            <pre class="code-box">
+              <h3 class="text-center code-title">Javier's Solution</h3>
+              <code>
               let charString = "I'm the best JS developer in Bogotá!";
 
               function countCharString(variable) {
-                console.log(variable.length);
+                console.log(variable.<b>length</b>);
               }
 
               countCharString(charString);
-            </code>
+              </code>
+              <h3 class="text-center code-title">MirCha's  Solution</h3>
+              <code>
+                <i><b>//Función declarada</b></i>
+                function contarCaracteres(cadena = "") {
+                  if (!cadena) {
+                    console.warn("No ingresaste ninguna cadena de texto");
+                  } else {
+                    console.info(
+                      `La cadena de texto "${cadena}" tiene ${cadena.<b>length</b>} caracteres.`
+                    );
+                  }
+                }
+
+                contarCaracteres(); <i><b>// Output: No ingresaste ninguna cadena de texto</b></i>
+                contarCaracteres("Hola Mundo"); <i><b>// Output: La Cadena de Texto tiene 10 caracteres </b></i>
+
+                <i><b>//Función Expresada</b></i>
+                const contarCaracteres2 = (cadena = "") => {
+                  !cadena
+                    ? console.warn("No ingresaste ninguna cadena de texto")
+                    : console.info(
+                        `La cadena de texto "${cadena}" tiene ${cadena.<b>length</b>} caracteres.`
+                      );
+                };
+
+                contarCaracteres2();
+                contarCaracteres2("Hello World");
+
+              </code>
+              <h4 class="text-center">propiedad clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length" target="_blank">.length</a></h4>
           </pre>
-        </li>
-        <li>
-          Programa una función que te devuelva el texto recortado según el
-          número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
-          devolverá "Hola".
-          <pre>
-            <code>
-              let charString = "I'm the best JS developer in Bogotá!";
-
-              function countCharSpecific(something) {
-                console.log(something.substring(0, 8));
-              }
-
-              countCharSpecific(charString);
-            </code>
+          </li>
+          <li>
+            Programa una función que te devuelva el texto recortado según el
+            número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
+            devolverá "Hola".
+            <pre class="code-box">
+              <div class="container-solutions">
+                <div>
+                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <code>
+                  
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <code>
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+              </div>
           </pre>
-        </li>
-        <li>
-          Programa una función que dada una String te devuelva un Array de
-          textos separados por cierto caracter, pe. miFuncion('hola que tal', '
-          ') devolverá ['hola', 'que', 'tal'].
-          <pre>
-            <code>
-              let greeting = "Hola qué tal";
-
-              function separateInAnArray(something) {
-                console.log(something.split(" "));
-              }
-
-              separateInAnArray(greeting);
-            </code>
+          </li>
+          <li>
+            Programa una función que dada una String te devuelva un Array de
+            textos separados por cierto caracter, pe. miFuncion('hola que tal',
+            ' ') devolverá ['hola', 'que', 'tal'].
+            <pre class="code-box">
+              <div class="container-solutions">
+                <div>
+                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <code>
+                  
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <code>
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+              </div>
           </pre>
-        </li>
-        <li>
-          Programa una función que repita un texto X veces, pe. miFuncion('Hola
-          Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
-        </li>
-      </ol>
+          </li>
+          <li>
+            Programa una función que repita un texto X veces, pe.
+            miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola
+            Mundo.
+            <pre class="code-box">
+              <div class="container-solutions">
+                <div>
+                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <code>
+                  
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <code>
+                    let helloWorld = "Hola mi hermano!";
+      
+                    let repeatTimes = 6;
+      
+                    function stringRepeat(something) {
+                      console.log(something.repeat(repeatTimes));
+                    }
+      
+                    stringRepeat(helloWorld);
+                  </code>
+                </div>
+              </div>
+          </pre>
+          </li>
+        </ol>
+      </div>
     </section>
     <script>
+      /*-------------------------\
+      | exercise 1 My solution
+      --------------------------*/
+
       let charString = "I'm the best JS developer in Bogotá!";
 
       function countCharString(variable) {
@@ -82,7 +197,41 @@
 
       countCharString(charString);
 
-      console.clear;
+      /*-----------------------------\
+      | exercise 1 MirCha's solution
+      -------------------------------*/
+
+      //Función declarada
+      function contarCaracteres(cadena = "") {
+        if (!cadena) {
+          console.warn("No ingresaste ninguna cadena de texto");
+        } else {
+          console.info(
+            `La cadena de texto "${cadena}" tiene ${cadena.length} caracteres.`
+          );
+        }
+      }
+
+      contarCaracteres();
+      contarCaracteres("Hola Mundo");
+
+      console.clear();
+
+      //Función expresada
+      const contarCaracteres2 = (cadena = "") => {
+        !cadena
+          ? console.warn("No ingresaste ninguna cadena de texto")
+          : console.info(
+              `La cadena de texto "${cadena}" tiene ${cadena.length} caracteres.`
+            );
+      };
+
+      contarCaracteres2();
+      contarCaracteres2("Hello World");
+
+      /*-------------------------\
+      | exercise 2 My solution
+      --------------------------*/
 
       function countCharSpecific(something) {
         console.log(something.substring(0, 8));
@@ -90,7 +239,9 @@
 
       countCharSpecific(charString);
 
-      console.clear;
+      /*-------------------------\
+      | exercise 3 My solution
+      --------------------------*/
 
       let greeting = "Hola qué tal";
 
@@ -99,6 +250,20 @@
       }
 
       separateInAnArray(greeting);
+
+      /*-------------------------\
+      | exercise 4 My solution
+      --------------------------*/
+
+      let helloWorld = "Hola mi hermano!";
+
+      let repeatTimes = 6;
+
+      function stringRepeat(something) {
+        console.log(something.repeat(repeatTimes));
+      }
+
+      stringRepeat(helloWorld);
     </script>
   </body>
 </html>

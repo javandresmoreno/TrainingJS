@@ -3,15 +3,24 @@
 /* El selector root es la misma etiqueta html pero tiene mayor jerarquia */
 :root {
   --darkest-blue: #243264;
+  --darkest-blue-alpha: rgba(36, 50, 100, 0.8);
   --dark-blue: #1d3e8a;
   --medium-blue: #2781c1;
   --soft-blue: #7fbfea;
   --yellow: #ece43c;
   --orange: #f4b219;
+  --orange-alpha: rgba(244, 178, 25, 0.8);
   --red: #e7323b;
+  --red-alpha: rgba(231, 50, 59, 0.8);
   --green: #69b42e;
   --black: #444;
   --white: #fff;
+  --gray-light: #f0f0f0;
+  --alpha-color: rgba(36, 50, 100, 0.6);
+  --max-width: 1200px;
+  --header-height: 8rem;
+  --shadow-text: 2px 2px 8px rgba(0, 0, 0, 0.47);
+  --box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 0.1);
 }
 
 @font-face {
@@ -98,7 +107,7 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 h3 {
@@ -156,6 +165,43 @@ li {
 .header > h1 {
   color: var(--soft-blue);
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  font-size: 2.5rem;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+.container ol {
+  margin: 0 1.5rem;
+  padding: 1rem;
+}
+
+.container h2 {
+  margin-top: 2rem;
+}
+
+.container-solutions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.code-box {
+  background-color: var(--gray-light);
+  border-radius: 1rem;
+  white-space: pre-line;
+  word-break: break-word;
+  padding: 1.5rem;
+}
+
+.code-box code {
+  color: var(--black);
 }
 
 /* --------------- Utilities -----------------*/
@@ -165,3 +211,20 @@ li {
 }
 
 /* --------------- Site Styles -----------------*/
+
+.code-title {
+  color: var(--medium-blue);
+}
+
+/* --------------- Media Query Desktop -----------------*/
+
+@media screen and (min-height: 768px) {
+  .code-box {
+    white-space: pre;
+    word-break: initial;
+    padding: 1.5rem;
+  }
+  .header > h1 {
+    font-size: 3.5rem;
+  }
+}
