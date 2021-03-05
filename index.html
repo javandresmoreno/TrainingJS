@@ -25,7 +25,7 @@
             Programa una función que cuente el número de caracteres de una
             cadena de texto, pe. miFuncion("Hola Mundo").
             <pre class="code-box">
-              <h3 class="text-center code-title">Javier's Solution</h3>
+              <h3 class="text-center code-title">Mi Solución</h3>
               <code>
               let charString = "I'm the best JS developer in Bogotá!";
 
@@ -35,7 +35,7 @@
 
               countCharString(charString);
               </code>
-              <h3 class="text-center code-title">MirCha's  Solution</h3>
+              <h3 class="text-center code-title">Solución del Profe Jon</h3>
               <code>
                 <i><b>//Función declarada</b></i>
                 function contarCaracteres(cadena = "") {
@@ -72,37 +72,38 @@
             número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
             devolverá "Hola".
             <pre class="code-box">
-              <div class="container-solutions">
+              
                 <div>
-                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <h3 class="text-center code-title">Mi Solución</h3>
                   <code>
-                  
-                    let helloWorld = "Hola mi hermano!";
-      
-                    let repeatTimes = 6;
-      
-                    function stringRepeat(something) {
-                      console.log(something.repeat(repeatTimes));
+                    
+                    let charString = "I'm the best JS developer in Bogotá!";
+
+                    function countCharSpecific(something) {
+                      console.log(something.substring(0, 8));
                     }
-      
-                    stringRepeat(helloWorld);
+
+                    countCharSpecific(charString);
                   </code>
                 </div>
                 <div>
-                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
                   <code>
-                    let helloWorld = "Hola mi hermano!";
-      
-                    let repeatTimes = 6;
-      
-                    function stringRepeat(something) {
-                      console.log(something.repeat(repeatTimes));
-                    }
-      
-                    stringRepeat(helloWorld);
+                    const recortarTexto = (cadena = "", longitud = undefined) =>
+                    !cadena
+                      ? console.warn("No ingresaste el texto")
+                      : longitud === undefined
+                      ? console.warn("No ingresaste la longitud para recortar")
+                      : console.info(cadena.slice(0, longitud));
+
+                    recortarTexto("Hola, Bienvenidos", 5);
+                    recortarTexto();
+                    recortarTexto("", 6);
+                    recortarTexto("Hola, nuevamente");
                   </code>
+                  <h4 class="text-center">propiedad clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice" target="_blank">.slice</a></h4>
                 </div>
-              </div>
+              
           </pre>
           </li>
           <li>
@@ -110,9 +111,9 @@
             textos separados por cierto caracter, pe. miFuncion('hola que tal',
             ' ') devolverá ['hola', 'que', 'tal'].
             <pre class="code-box">
-              <div class="container-solutions">
+              
                 <div>
-                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <h3 class="text-center code-title">Mi Solución</h3>
                   <code>
                   
                     let helloWorld = "Hola mi hermano!";
@@ -127,20 +128,30 @@
                   </code>
                 </div>
                 <div>
-                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
                   <code>
-                    let helloWorld = "Hola mi hermano!";
-      
-                    let repeatTimes = 6;
-      
-                    function stringRepeat(something) {
-                      console.log(something.repeat(repeatTimes));
-                    }
-      
-                    stringRepeat(helloWorld);
+                    const cadenaAArreglo = (cadena = "", separador = undefined) =>
+                      !cadena
+                        ? console.warn("No ingresaste el texto")
+                        : separador === undefined
+                        ? console.warn("No ingresaste el carácter separador")
+                        : console.info(cadena.split(separador));
+
+                    cadenaAArreglo(
+                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      Dolor suscipit id aliquam, minima deleniti assumenda 
+                      numquam ut pariatur fuga optio delectus natus consectetur est, 
+                      tenetur quasi excepturi aspernatur distinctio! Quas.",
+                      " "
+                    );
+                    cadenaAArreglo("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic", ",");
+                    cadenaAArreglo();
+                    cadenaAArreglo("Hola Mundo");
+                    cadenaAArreglo("", "-");
                   </code>
+                  <h4 class="text-center">propiedad clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/split" target="_blank">.split</a></h4>
                 </div>
-              </div>
+              
           </pre>
           </li>
           <li>
@@ -148,9 +159,9 @@
             miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola
             Mundo.
             <pre class="code-box">
-              <div class="container-solutions">
+              
                 <div>
-                  <h3 class="text-center code-title">Javier's Solution</h3>
+                  <h3 class="text-center code-title">Mi Solución</h3>
                   <code>
                   
                     let helloWorld = "Hola mi hermano!";
@@ -165,21 +176,53 @@
                   </code>
                 </div>
                 <div>
-                  <h3 class="text-center code-title">MirCha's  Solution</h3>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
                   <code>
-                    let helloWorld = "Hola mi hermano!";
-      
-                    let repeatTimes = 6;
-      
-                    function stringRepeat(something) {
-                      console.log(something.repeat(repeatTimes));
-                    }
-      
-                    stringRepeat(helloWorld);
+                    const repetirTexto = (texto = "", veces = undefined) => {
+                      if (!texto) return console.warn("No ingresaste un texto válido");
+                      if (veces === undefined)
+                        return console.warn(
+                          "No ingresaste el número de veces a repetir el texto"
+                        );
+                      if (veces === 0)
+                        return console.error("El número de veces no puedo ser 0");
+                      if (Math.sign(veces) === -1)
+                        return console.warn("El número de veces no puede ser negativo");
+
+                      for (let i = 1; i <= veces; i++) console.info(`${texto}, ${i}`);
+                    };
+
+                    repetirTexto("Soy una función", 3);
+                    repetirTexto("Soy una función", 0);
+                    repetirTexto("Soy una función", -20);
+                    repetirTexto("", 20);
+                    repetirTexto("Soy una función");
+
+                    
                   </code>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for" target="_blank">ciclo for</a></h4>
                 </div>
-              </div>
+              
           </pre>
+          </li>
+          <li>
+            Programa una función que invierta las palabras de una cadena de
+            texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+          </li>
+          <li>
+            Programa una función para contar el número de veces que se repite
+            una palabra en un texto largo, pe. miFuncion("hola mundo adios
+            mundo", "mundo") devolverá 2.
+          </li>
+          <li>
+            Programa una función que valide si una palabra o frase dada, es un
+            palíndromo (que se lee igual en un sentido que en otro), pe.
+            mifuncion("Salas") devolverá true.
+          </li>
+          <li>
+            Programa una función que elimine cierto patrón de caracteres de un
+            texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+            devolverá "1, 2, 3, 4 y 5.
           </li>
         </ol>
       </div>
@@ -188,6 +231,8 @@
       /*-------------------------\
       | exercise 1 My solution
       --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 1");
 
       let charString = "I'm the best JS developer in Bogotá!";
 
@@ -215,8 +260,6 @@
       contarCaracteres();
       contarCaracteres("Hola Mundo");
 
-      console.clear();
-
       //Función expresada
       const contarCaracteres2 = (cadena = "") => {
         !cadena
@@ -229,9 +272,13 @@
       contarCaracteres2();
       contarCaracteres2("Hello World");
 
+      console.groupEnd();
+
       /*-------------------------\
       | exercise 2 My solution
       --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 2");
 
       function countCharSpecific(something) {
         console.log(something.substring(0, 8));
@@ -239,9 +286,28 @@
 
       countCharSpecific(charString);
 
+      /*-----------------------------\
+      | exercise 2 MirCha's solution
+      -------------------------------*/
+
+      const recortarTexto = (cadena = "", longitud = undefined) =>
+        !cadena
+          ? console.warn("No ingresaste el texto")
+          : longitud === undefined
+          ? console.warn("No ingresaste la longitud para recortar")
+          : console.info(cadena.slice(0, longitud));
+
+      recortarTexto("Hola, Bienvenidos", 5);
+      recortarTexto();
+      recortarTexto("", 6);
+      recortarTexto("Hola, nuevamente");
+      console.groupEnd();
+
       /*-------------------------\
       | exercise 3 My solution
       --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 3");
 
       let greeting = "Hola qué tal";
 
@@ -251,9 +317,33 @@
 
       separateInAnArray(greeting);
 
+      /*-----------------------------\
+      | exercise 3 MirCha's solution
+      -------------------------------*/
+
+      const cadenaAArreglo = (cadena = "", separador = undefined) =>
+        !cadena
+          ? console.warn("No ingresaste el texto")
+          : separador === undefined
+          ? console.warn("No ingresaste el carácter separador")
+          : console.info(cadena.split(separador));
+
+      cadenaAArreglo(
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor suscipit id aliquam, minima deleniti assumenda numquam ut pariatur fuga optio delectus natus consectetur est, tenetur quasi excepturi aspernatur distinctio! Quas.",
+        " "
+      );
+      cadenaAArreglo("Ene,Feb,Mar,Abr,May,Jun,Jul,Ago,Sep,Oct,Nov,Dic", ",");
+      cadenaAArreglo();
+      cadenaAArreglo("Hola Mundo");
+      cadenaAArreglo("", "-");
+
+      console.groupEnd();
+
       /*-------------------------\
       | exercise 4 My solution
       --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 4");
 
       let helloWorld = "Hola mi hermano!";
 
@@ -264,6 +354,66 @@
       }
 
       stringRepeat(helloWorld);
+
+      /*-----------------------------\
+      | exercise 4 MirCha's solution
+      -------------------------------*/
+
+      const repetirTexto = (texto = "", veces = undefined) => {
+        if (!texto) return console.warn("No ingresaste un texto válido");
+        if (veces === undefined)
+          return console.warn(
+            "No ingresaste el número de veces a repetir el texto"
+          );
+        if (veces === 0)
+          return console.error("El número de veces no puedo ser 0");
+        if (Math.sign(veces) === -1)
+          return console.warn("El número de veces no puede ser negativo");
+
+        for (let i = 1; i <= veces; i++) console.info(`${texto}, ${i}`);
+      };
+
+      repetirTexto("Soy una función", 3);
+      repetirTexto("Soy una función", 0);
+      repetirTexto("Soy una función", -20);
+      repetirTexto("", 20);
+      repetirTexto("Soy una función");
+
+      console.groupEnd();
+
+      /*-------------------------\
+      | Ejercicios con array 
+      --------------------------*/
+
+      console.groupCollapsed("Ejercicios con arrays");
+      const nextLarger = (a) => {
+        const res = [];
+        for (let i = 0; i < a.length; i++) {
+          let currNum = a[i];
+          for (let n = i; n < a.length; n++) {
+            if (a[n] > currNum) {
+              res.push(a[n]);
+              break;
+            } else if (n === a.length - 1) {
+              res.push(-1);
+            }
+          }
+        }
+
+        return res;
+      };
+
+      console.log(nextLarger([6, 7, 3, 8]));
+
+      function makeArrayConsecutive(statues) {
+        let sorted = statues.sort((a, b) => a - b);
+        let full = sorted[sorted.length - 1] - sorted[0] + 1;
+        return full - sorted.length;
+      }
+
+      console.log(makeArrayConsecutive([6, 2, 3, 8]));
+
+      console.groupEnd();
     </script>
   </body>
 </html>
