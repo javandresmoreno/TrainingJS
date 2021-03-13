@@ -208,21 +208,113 @@
           <li>
             Programa una función que invierta las palabras de una cadena de
             texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+            <pre class="code-box">  
+                <div>
+                  <h3 class="text-center code-title">Mi Solución</h3>
+                  <code>
+                    let mySolution = undefined
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
+                  <code>
+                      const invertirCadena = (cadena = "") =>
+                        !cadena
+                          ? console.warn("No ingresaste texto válido")
+                          : console.info(cadena.split("").reverse().join(""));
+
+                      invertirCadena();
+                      invertirCadena("Soy un Humano Diferente"); //etnerefiD onamuH nu yoS
+                  </code>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank">.split</a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank">.reverse</a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">.join</a></h4>
+                </div>
+            </pre>
           </li>
           <li>
             Programa una función para contar el número de veces que se repite
             una palabra en un texto largo, pe. miFuncion("hola mundo adios
             mundo", "mundo") devolverá 2.
+            <pre class="code-box">  
+                <div>
+                  <h3 class="text-center code-title">Mi Solución</h3>
+                  <code>
+                    let mySolution = undefined
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
+                  <code>
+                    const textoEnCadena = (cadena = "", texto = "") => {
+                      if (!cadena) return console.warn("No ingresaste el texto largo.");
+                      if (!texto) return console.warn("No ingresaste la palabra a evaluar");
+
+                      let i = 0,
+                        contador = 0;
+                     
+                      while (i !== -1) {
+                     
+                        i = cadena.indexOf(texto, i);
+
+                        if (i !== -1) {
+                          i++;
+                          contador++;
+                        }
+                      }
+                      return console.info(`La palabra ${texto} se repite ${contador} veces`);
+                    };
+
+                    textoEnCadena();
+                    textoEnCadena("", "mundo");
+                    textoEnCadena("hola mundo adios mundo");
+                    textoEnCadena("hola mundo adios mundo hola adios mundo", "mundo"); //La palabra mundo se repite 3 veces
+
+                    console.groupEnd();
+                  </code>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/indexOf" target="_blank">.indexOf</a></h4>
+                </div>
+            </pre>
           </li>
           <li>
             Programa una función que valide si una palabra o frase dada, es un
             palíndromo (que se lee igual en un sentido que en otro), pe.
             mifuncion("Salas") devolverá true.
+            <pre class="code-box">  
+                <div>
+                  <h3 class="text-center code-title">Mi Solución</h3>
+                  <code>
+                  
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
+                  <code>
+                    
+                  </code>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for" target="_blank"></a></h4>
+                </div>
+            </pre>
           </li>
           <li>
             Programa una función que elimine cierto patrón de caracteres de un
             texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
             devolverá "1, 2, 3, 4 y 5.
+            <pre class="code-box">  
+                <div>
+                  <h3 class="text-center code-title">Mi Solución</h3>
+                  <code>
+                  
+                  </code>
+                </div>
+                <div>
+                  <h3 class="text-center code-title">Solución del Profe Jon</h3>
+                  <code>
+                    
+                  </code>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for" target="_blank"></a></h4>
+                </div>
+            </pre>
           </li>
         </ol>
       </div>
@@ -412,6 +504,80 @@
       }
 
       console.log(makeArrayConsecutive([6, 2, 3, 8]));
+
+      console.groupEnd();
+
+      /*-------------------------\
+      | exercise 5 My solution
+      --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 5");
+
+      let mySolution = undefined;
+
+      /*-----------------------------\
+      | exercise 5 MirCha's solution
+      -------------------------------*/
+      /*  Primero se valida que exista texto y si no se manda un string vacio
+          negando cadena en el if.  Luego con Split (metodo de strings) divido 
+          esa cadena letra por letra, luego con reverse (método de arrays) la 
+          pongo al reves y luego con join (método de arrays) la vuelvo a unir 
+          en una sola cadena. 
+      */
+      // arrow function expresada implícita (sin brackets)
+      const invertirCadena = (cadena = "") =>
+        !cadena
+          ? console.warn("No ingresaste texto válido")
+          : console.info(cadena.split("").reverse().join(""));
+
+      invertirCadena();
+      invertirCadena("Soy un Humano Diferente"); //etnerefiD onamuH nu yoS
+
+      console.groupEnd();
+
+      /*-------------------------\
+      | exercise 6 My solution
+      --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 6");
+
+      let mySolutionx2 = undefined;
+
+      /*-----------------------------\
+      | exercise 6 MirCha's solution
+      -------------------------------*/
+
+      const textoEnCadena = (cadena = "", texto = "") => {
+        if (!cadena) return console.warn("No ingresaste el texto largo.");
+        if (!texto) return console.warn("No ingresaste la palabra a evaluar");
+
+        let i = 0,
+          contador = 0;
+
+        /*  se evalua con -1 porque si .indexOf no encuentra la palabra 
+            dentro del texto a evaluar el devolverá -1, por eso para 
+            evaluar correctamente necesito que sea diferente a -1 y me
+            de la posición donde está. 
+        */
+        while (i !== -1) {
+          /*  aquí le digo la palabra a buscar por la primera posición
+              que es 0 y el numero de veces.
+          */
+          i = cadena.indexOf(texto, i);
+
+          // si encontró coincidencias, sume uno
+          if (i !== -1) {
+            i++;
+            contador++;
+          }
+        }
+        return console.info(`La palabra ${texto} se repite ${contador} veces`);
+      };
+
+      textoEnCadena();
+      textoEnCadena("", "mundo");
+      textoEnCadena("hola mundo adios mundo");
+      textoEnCadena("hola mundo adios mundo hola adios mundo", "mundo");
 
       console.groupEnd();
     </script>
