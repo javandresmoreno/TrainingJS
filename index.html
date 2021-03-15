@@ -20,8 +20,66 @@
     <section>
       <div class="container">
         <h2 class="text-center">Lista de Ejercicios</h2>
+        <hr />
         <ol>
           <li>
+            <a href="#exercise-1">
+              Programa una función que cuente el número de caracteres de una
+              cadena de texto, pe. miFuncion("Hola Mundo").
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-2">
+              Programa una función que te devuelva el texto recortado según el
+              número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
+              devolverá "Hola".
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-3">
+              Programa una función que dada una String te devuelva un Array de
+              textos separados por cierto caracter, pe. miFuncion('hola que
+              tal', ' ') devolverá ['hola', 'que', 'tal'].
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-4">
+              Programa una función que repita un texto X veces, pe.
+              miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola
+              Mundo.
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-5">
+              Programa una función que invierta las palabras de una cadena de
+              texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-6">
+              Programa una función para contar el número de veces que se repite
+              una palabra en un texto largo, pe. miFuncion("hola mundo adios
+              mundo", "mundo") devolverá 2.
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-7">
+              Programa una función que valide si una palabra o frase dada, es un
+              palíndromo (que se lee igual en un sentido que en otro), pe.
+              mifuncion("Salas") devolverá true.
+            </a>
+          </li>
+          <li>
+            <a href="#exercise-8">
+              Programa una función que elimine cierto patrón de caracteres de un
+              texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
+              devolverá "1, 2, 3, 4 y 5.
+            </a>
+          </li>
+        </ol>
+        <hr />
+        <ol>
+          <li id="exercise-1">
             Programa una función que cuente el número de caracteres de una
             cadena de texto, pe. miFuncion("Hola Mundo").
             <pre class="code-box">
@@ -67,7 +125,7 @@
               <h4 class="text-center">propiedad clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length" target="_blank">.length</a></h4>
           </pre>
           </li>
-          <li>
+          <li id="exercise-2">
             Programa una función que te devuelva el texto recortado según el
             número de caracteres indicados, pe. miFuncion("Hola Mundo", 4)
             devolverá "Hola".
@@ -106,7 +164,7 @@
               
           </pre>
           </li>
-          <li>
+          <li id="exercise-3">
             Programa una función que dada una String te devuelva un Array de
             textos separados por cierto caracter, pe. miFuncion('hola que tal',
             ' ') devolverá ['hola', 'que', 'tal'].
@@ -154,7 +212,7 @@
               
           </pre>
           </li>
-          <li>
+          <li id="exercise-4">
             Programa una función que repita un texto X veces, pe.
             miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola
             Mundo.
@@ -205,7 +263,7 @@
               
           </pre>
           </li>
-          <li>
+          <li id="exercise-5">
             Programa una función que invierta las palabras de una cadena de
             texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".
             <pre class="code-box">  
@@ -232,7 +290,7 @@
                 </div>
             </pre>
           </li>
-          <li>
+          <li id="exercise-6">
             Programa una función para contar el número de veces que se repite
             una palabra en un texto largo, pe. miFuncion("hola mundo adios
             mundo", "mundo") devolverá 2.
@@ -265,9 +323,9 @@
                       return console.info(`La palabra ${texto} se repite ${contador} veces`);
                     };
 
-                    textoEnCadena();
-                    textoEnCadena("", "mundo");
-                    textoEnCadena("hola mundo adios mundo");
+                    textoEnCadena(); // No ingresaste el texto largo
+                    textoEnCadena("", "mundo"); // No ingresaste el texto largo
+                    textoEnCadena("hola mundo adios mundo"); // No ingresaste la palabra a evaluar
                     textoEnCadena("hola mundo adios mundo hola adios mundo", "mundo"); //La palabra mundo se repite 3 veces
 
                     console.groupEnd();
@@ -276,7 +334,7 @@
                 </div>
             </pre>
           </li>
-          <li>
+          <li id="exercise-7">
             Programa una función que valide si una palabra o frase dada, es un
             palíndromo (que se lee igual en un sentido que en otro), pe.
             mifuncion("Salas") devolverá true.
@@ -284,19 +342,50 @@
                 <div>
                   <h3 class="text-center code-title">Mi Solución</h3>
                   <code>
-                  
+                    let mySolutionx3 = undefined;
                   </code>
                 </div>
                 <div>
                   <h3 class="text-center code-title">Solución del Profe Jon</h3>
                   <code>
-                    
+                    /*
+                      Primero realizamos las validaciones:
+                      - Si no hay palabra, lanzamos un warning.
+                      - Convertimos nuestra palabra a minúsculas, porque JS es sensitivo a letras 
+                        mayúsculas y minúsculas. 
+                      - Defino la variable alReves por medio de los métodos split, para volverlo un array,
+                        reverse para darle la vuelta al array y join para unir de nuevo en una cadena de 
+                        texto. 
+                      - Retorno que si la palabra es estrictamente igual a alReves entonces me imprima 
+                        según sea el caso 
+                    */
+
+                    const palindromo = (palabra = "") => {
+                      if (!palabra) return console.warn("No ingresaste una palabra o frase");
+                      palabra = palabra.toLowerCase();
+                      let alReves = palabra.split("").reverse().join("");
+
+                      return palabra === alReves
+                        ? console.info(
+                            `SÍ es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`
+                          )
+                        : console.info(
+                            `NO es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`
+                          );
+                    };
+
+                    palindromo();
+                    palindromo("Salas");
+                    palindromo("LaTeleLetal");
+                    palindromo("Mantenimiento");
                   </code>
-                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for" target="_blank"></a></h4>
+                   <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank">.split</a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank">.reverse</a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/join" target="_blank">.join</a></h4>
                 </div>
             </pre>
           </li>
-          <li>
+          <li id="exercise-8">
             Programa una función que elimine cierto patrón de caracteres de un
             texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz")
             devolverá "1, 2, 3, 4 y 5.
@@ -304,15 +393,56 @@
                 <div>
                   <h3 class="text-center code-title">Mi Solución</h3>
                   <code>
-                  
+                    let mySolutionx4 = undefined;
                   </code>
                 </div>
                 <div>
                   <h3 class="text-center code-title">Solución del Profe Jon</h3>
                   <code>
-                    
+                      /*
+                        Primero realizamos las validaciones:
+                        - Si no hay Texto, lanzamos un warning.
+                        - Si no existe patrón, lanza otro warning
+                        - si todo está, entonces en el metodo replace agregamos una nueva 
+                          instancia del objeto RegExp y pasamos el patrón y las banderas 
+                          "ig" que significan que: i: no importa si son mayúsculas o 
+                          minúsculas o otro tipo de caracter, y g: para que no se detenga 
+                          en la primer coincidencia, sino que recorra todo el texto hasta
+                          encontrar todas. 
+                        
+                      */
+
+                      const eliminarCaracteres = (texto = "", patron = "") => {
+                        !texto
+                          ? console.warn(`No ingresaste texto.`)
+                          : !patron
+                          ? console.warn(
+                              "No ingresaste los caracteres a eliminar (Patrón de caracteres)"
+                            )
+                          : console.info(texto.replace(new RegExp(patron, "ig"), ""));
+                      };
+
+                      eliminarCaracteres();
+                      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6");
+                      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6", "xyz");
+                      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6", "yz");
+                      eliminarCaracteres(
+                        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, 
+                        veritatis? Vel mollitia voluptas ullam alias exercitationem ea, ipsam 
+                        ducimus in quod obcaecati corrupti libero! Voluptatum sint ipsam aliquam 
+                        praesentium est.",
+                        "o"
+                      );
+                      eliminarCaracteres(
+                        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, 
+                        veritatis? Vel mollitia voluptas ullam alias exercitationem ea, ipsam 
+                        ducimus in quod obcaecati corrupti libero! Voluptatum sint ipsam aliquam 
+                        praesentium est.",
+                        "[a-z]"
+                      );
                   </code>
-                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/for" target="_blank"></a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/RegExp" target="_blank">RegExp</a></h4>
+                  <h4 class="text-center">clave: <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace" target="_blank">.replace</a></h4>
                 </div>
             </pre>
           </li>
@@ -474,7 +604,7 @@
       console.groupEnd();
 
       /*-------------------------\
-      | Ejercicios con array 
+      | Ejercicios con array
       --------------------------*/
 
       console.groupCollapsed("Ejercicios con arrays");
@@ -519,10 +649,10 @@
       | exercise 5 MirCha's solution
       -------------------------------*/
       /*  Primero se valida que exista texto y si no se manda un string vacio
-          negando cadena en el if.  Luego con Split (metodo de strings) divido 
-          esa cadena letra por letra, luego con reverse (método de arrays) la 
-          pongo al reves y luego con join (método de arrays) la vuelvo a unir 
-          en una sola cadena. 
+          negando cadena en el if.  Luego con Split (metodo de strings) divido
+          esa cadena letra por letra, luego con reverse (método de arrays) la
+          pongo al reves y luego con join (método de arrays) la vuelvo a unir
+          en una sola cadena.
       */
       // arrow function expresada implícita (sin brackets)
       const invertirCadena = (cadena = "") =>
@@ -554,10 +684,10 @@
         let i = 0,
           contador = 0;
 
-        /*  se evalua con -1 porque si .indexOf no encuentra la palabra 
-            dentro del texto a evaluar el devolverá -1, por eso para 
+        /*  se evalua con -1 porque si .indexOf no encuentra la palabra
+            dentro del texto a evaluar el devolverá -1, por eso para
             evaluar correctamente necesito que sea diferente a -1 y me
-            de la posición donde está. 
+            de la posición donde está.
         */
         while (i !== -1) {
           /*  aquí le digo la palabra a buscar por la primera posición
@@ -579,6 +709,100 @@
       textoEnCadena("hola mundo adios mundo");
       textoEnCadena("hola mundo adios mundo hola adios mundo", "mundo");
 
+      console.groupEnd();
+
+      /*-------------------------\
+      | exercise 7 My solution
+      --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 7");
+
+      let mySolutionx3 = undefined;
+
+      /*-----------------------------\
+      | exercise 7 MirCha's solution
+      -------------------------------*/
+
+      /*
+        Primero realizamos las validaciones:
+        - Si no hay palabra, lanzamos un warning.
+        - Convertimos nuestra palabra a minúsculas, porque JS es sensitivo a letras 
+          mayúsculas y minúsculas. 
+        - Defino la variable alReves por medio de los métodos split, para volverlo un array,
+          reverse para darle la vuelta al array y join para unir de nuevo en una cadena de 
+          texto. 
+        - Retorno que si la palabra es estrictamente igual a alReves entonces me imprima 
+          según sea el caso 
+      */
+
+      const palindromo = (palabra = "") => {
+        if (!palabra) return console.warn("No ingresaste una palabra o frase");
+        palabra = palabra.toLowerCase();
+        let alReves = palabra.split("").reverse().join("");
+
+        return palabra === alReves
+          ? console.info(
+              `SÍ es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`
+            )
+          : console.info(
+              `NO es palíndromo, Palabra original ${palabra}, Palabra al revés ${alReves}`
+            );
+      };
+
+      palindromo();
+      palindromo("Salas");
+      palindromo("LaTeleLetal");
+      palindromo("Mantenimiento");
+
+      console.groupEnd();
+
+      /*-------------------------\
+      | exercise 8 My solution
+      --------------------------*/
+
+      console.groupCollapsed("Ejercicio No. 8");
+
+      let mySolutionx4 = undefined;
+
+      /*-----------------------------\
+      | exercise 8 MirCha's solution
+      -------------------------------*/
+
+      /*
+        Primero realizamos las validaciones:
+        - Si no hay Texto, lanzamos un warning.
+        - Si no existe patrón, lanza otro warning
+        - si todo está, entonces en el metodo replace agregamos una nueva 
+          instancia del objeto RegExp y pasamos el patrón y las banderas 
+          "ig" que significan que: i: no importa si son mayúsculas o 
+          minúsculas o otro tipo de caracter, y g: para que no se detenga 
+          en la primer coincidencia, sino que recorra todo el texto hasta
+          encontrar todas. 
+        
+      */
+
+      const eliminarCaracteres = (texto = "", patron = "") => {
+        !texto
+          ? console.warn(`No ingresaste texto.`)
+          : !patron
+          ? console.warn(
+              "No ingresaste los caracteres a eliminar (Patrón de caracteres)"
+            )
+          : console.info(texto.replace(new RegExp(patron, "ig"), ""));
+      };
+
+      eliminarCaracteres();
+      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6");
+      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6", "xyz");
+      eliminarCaracteres("xyz1, xyz2, xyz3, xyz4, xyz5, xyz6", "yz");
+      eliminarCaracteres(
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, veritatis? Vel mollitia voluptas ullam alias exercitationem ea, ipsam ducimus in quod obcaecati corrupti libero! Voluptatum sint ipsam aliquam praesentium est.",
+        "o"
+      );
+      eliminarCaracteres(
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, veritatis? Vel mollitia voluptas ullam alias exercitationem ea, ipsam ducimus in quod obcaecati corrupti libero! Voluptatum sint ipsam aliquam praesentium est.",
+        "[a-z]"
+      );
       console.groupEnd();
     </script>
   </body>

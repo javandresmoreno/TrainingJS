@@ -129,6 +129,11 @@ h6 {
   margin: 0;
   font-size: 1.25rem;
 }
+
+hr {
+  margin: 4rem 0;
+  border: 0.2rem solid var(--soft-blue);
+}
 /*Para hacer todas las imágenes responsivas
 con respecto a su contenedor*/
 img {
