@@ -209,6 +209,11 @@ li {
   color: var(--black);
 }
 
+.btn-up {
+  position: relative;
+  float: right;
+}
+
 /* --------------- Utilities -----------------*/
 
 .box-shadow {

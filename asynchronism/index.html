@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asincronía en JavaScript</title>
+  </head>
+  <body>
+    <h1>Asincronía en JavaScript</h1>
+    <script>
+      console.groupCollapsed("Conceptos Iniciales");
+      console.log("Inicio");
+      /* SetTimeOut recibe una callback (función) que va a ejecutar
+        y recibe un tiempo en milisegundos (1000)*/
+      setTimeout(() => {
+        console.log(
+          "Ejecutando en setTimeOut, esto se ejecuta una sola vez..."
+        );
+      }, 1000);
+      /* SetTimeOut recibe una callback (función) que va a ejecutar
+        y recibe un tiempo en milisegundos (3000), pero se ejecuta varias
+        veces de acuerdo al tiempo*/
+      setInterval(() => {
+        console.log(
+          "Ejecutando en setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo."
+        );
+      }, 5000);
+      console.groupEnd();
+
+      console.groupCollapsed("Ejercicios");
+
+      // setInterval(() => {
+      //   console.log(new Date().toLocaleTimeString());
+      // }, 3000);
+
+      let timer = setTimeout(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 3000);
+
+      clearTimeout(timer);
+
+      let timerInterval = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 3000);
+
+      clearInterval(timerInterval);
+      console.log("after timer");
+
+      console.groupEnd();
+    </script>
+  </body>
+</html>
